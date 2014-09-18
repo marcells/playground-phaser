@@ -109,12 +109,6 @@ var main = {
 
 // Initialize Phaser, and start our 'main' state 
 var game = new Phaser.Game(400, 480, Phaser.AUTO, 'gameDiv');
-game.stage.scaleMode = Phaser.StageScaleMode.SHOW_ALL;
-
-game.stage.scale.minWidth = 400;
-game.stage.scale.minHeight = 480;
-game.stage.scale.maxWidth = 480;
-game.stage.scale.maxHeight = 800;
 
 game.state.add('main', main);
 game.state.start('main');

@@ -22,7 +22,7 @@ var main = {
     this.cursor = game.input.keyboard.createCursorKeys();
 
     // Create the paddle at the bottom of the screen
-    this.paddle = game.add.sprite(200, 400, 'paddle');
+    this.paddle = game.add.sprite(150, 320, 'paddle');
 
     // Enable the physics system for the paddle
     game.physics.arcade.enable(this.paddle);
@@ -36,9 +36,9 @@ var main = {
     this.bricks.enableBody = true;
 
     // Create the 16 bricks
-    for (var i = 0; i < 5; i++)
-      for (var j = 0; j < 5; j++)
-        game.add.sprite(50+i*60, 55+j*35, 'brick', 0, this.bricks);
+    for (var i = 0; i < 4; i++)
+      for (var j = 0; j < 3; j++)
+        game.add.sprite(40+i*60, 55+j*35, 'brick', 0, this.bricks);
 
     // Make sure that the bricks won't move
     this.bricks.setAll('body.immovable', true);
@@ -48,7 +48,7 @@ var main = {
                   Ball
     ***************************************/
     // Create the ball with physics
-    this.ball = game.add.sprite(200, 300, 'ball');
+    this.ball = game.add.sprite(160, 250, 'ball');
     game.physics.arcade.enable(this.ball);
 
     // Add velocity to the ball
@@ -108,7 +108,7 @@ var main = {
 };
 
 // Initialize Phaser, and start our 'main' state 
-var game = new Phaser.Game(400, 480, Phaser.AUTO, 'gameDiv');
+var game = new Phaser.Game(320, 400, Phaser.AUTO, 'gameDiv');
 
 game.state.add('main', main);
 game.state.start('main');

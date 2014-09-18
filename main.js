@@ -38,7 +38,7 @@ var main = {
     // Create the 16 bricks
     for (var i = 0; i < 5; i++)
       for (var j = 0; j < 5; j++)
-        game.add.sprite(55+i*60, 55+j*35, 'brick', 0, this.bricks);
+        game.add.sprite(50+i*60, 55+j*35, 'brick', 0, this.bricks);
 
     // Make sure that the bricks won't move
     this.bricks.setAll('body.immovable', true);
@@ -108,6 +108,13 @@ var main = {
 };
 
 // Initialize Phaser, and start our 'main' state 
-var game = new Phaser.Game(400, 500, Phaser.AUTO, 'gameDiv');
+var game = new Phaser.Game(400, 480, Phaser.AUTO, 'gameDiv');
+game.stage.scaleMode = Phaser.StageScaleMode.SHOW_ALL;
+
+game.stage.scale.minWidth = 400;
+game.stage.scale.minHeight = 480;
+game.stage.scale.maxWidth = 480;
+game.stage.scale.maxHeight = 800;
+
 game.state.add('main', main);
 game.state.start('main');
